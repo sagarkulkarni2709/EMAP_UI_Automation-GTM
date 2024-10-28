@@ -49,13 +49,15 @@ public class SendReport extends TestResults{
 			MimeBodyPart messageBodyPart1 = new MimeBodyPart();
 			messageBodyPart1.setContent("***This is Auto generated mail triggered after automation execution of Emap scenarios***" + 
 					"<br/>" + "<br/>" + "<b>"+"Hello All, "+ "<br/>" + 
-					"<br/>" + "<br/>" + "<b>"+"Below mentioned is the Execution Summary :- "+"<b>" + "<br/>" + "<br/>" +"<table width='100%' border='1' align='center'>"
-	                + "<tr align='center'>"+ "<td><b>Test Result <b></td>"  + "<td><b>Count<b></td>" + "</tr>"
+					"<br/>" + "<br/>" + "<b>"+"Below mentioned is the Execution Summary :- "+"<b>" + "<br/>" + "<br/>" +
+					"<table width='50%' border='1' align='left'>"
+	                + "<tr align='center'>"+ "<td style='background-color: rgb(180, 198, 231);'><b>Test Result <b></td>"  + "<td style='background-color: rgb(180, 198, 231);'><b>Count<b></td>" + "</tr>"
 					+"<tr align='center'>"+ "<td>Total Run </td>"  + "<td>"+(pass+fail+skipped)+"</td>" + "</tr>"
-					+ "<tr align='center'>"+ "<td>Pass </td>"  + "<td>"+pass+"</td>" + "</tr>"
-					+ "<tr align='center'>"+ "<td>Fail </td>"  + "<td>"+fail+"</td>" + "</tr>"
-					+ "<tr align='center'>"+ "<td>Skip </td>"  + "<td>"+skipped+"</td>" + "</tr>"+ "</table>"+ "<br/>" + "<br/>" + "<b>"+"Thanks,"+ "<br/>" +  "<br/>" + "<b>"+"Sagar K"
-					,"text/html;charset=UTF-8" );
+					+ "<tr align='center'>"+ "<td>Pass </td>"  + "<td style='background-color: rgb(0, 255, 0);'>"+pass+"</td>" + "</tr>"
+					+ "<tr align='center'>"+ "<td>Fail </td>"  + "<td style='background-color: rgb(255, 0, 0);'>"+fail+"</td>" + "</tr>"
+					+ "<tr align='center'>"+ "<td>Skip </td>"  + "<td>"+skipped+"</td>" + "</tr>"+ "</table>"+ 
+					"<br/>" + "<br/>" + "<br/>"+ "<br/>"+ "<br/>"+ "<br/>"+ "<br/>"+"<b>"+"Thanks,"+ 
+					"<br/>" +  "<br/>" + "<b>"+"Sagar K" , "text/html;charset=UTF-8" );
 			
 			MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 			File latestGeneratedFilename = getTheNewestFile("./TestReport", "html");
