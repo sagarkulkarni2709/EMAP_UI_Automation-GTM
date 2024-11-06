@@ -146,6 +146,7 @@ public class TestInitializer {
 	
 	public static void ReadData() 
 	{
+		
 		File file = new File("./datafile.properties");
 		FileInputStream fileInput = null;
 		try 
@@ -165,6 +166,7 @@ public class TestInitializer {
 			e.printStackTrace();
 		}
 		ReadDataConfig();
+		deleteTestReportFiles();
 	}
 	
 	public static void ReadDataConfig() 
@@ -210,6 +212,31 @@ public class TestInitializer {
 				FileUtils.copyFile(latestGeneratedPropertiesFile, dest);
 		} catch (Exception e) {
 		    e.printStackTrace();
+		}
+	}
+	
+	public static void deleteTestReportFiles() {
+		File file = new File("./TestReport");
+		File filesList[] = file.listFiles();
+		for (File fileItem : filesList) {
+			if (fileItem.isFile()) {
+				fileItem.delete();
+			} else {
+				continue;
+			}
+		}
+		deleteScreenshotFiles();
+	}
+	
+	public static void deleteScreenshotFiles() {
+		File file = new File("./TestReport/Screenshots");
+		File filesList[] = file.listFiles();
+		for (File fileItem : filesList) {
+			if (fileItem.isFile()) {
+				fileItem.delete();
+			} else {
+				continue;
+			}
 		}
 	}
 }
